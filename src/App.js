@@ -1,9 +1,10 @@
 import React from 'react'
 import './styles/global.sass'
+import './styles/app.sass'
 
 function App() {
   return (
-    <div className="App">
+    <div id="App">
       
     </div>
   )
