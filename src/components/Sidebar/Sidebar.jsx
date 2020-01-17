@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import './../../styles/sidebar.sass'
+import api from './../../services/api'
 
-const Sidebar = () => {
+const Sidebar = ({ onSubmit }) => {
     
     const [github_username, setGithubUserName] = useState('')
     const [techs, setTechs] = useState('')
@@ -24,10 +25,24 @@ const Sidebar = () => {
         )
     },[])
 
+    function handleSubmit(e) {
+        e.preventDefault()
+        
+        onSubmit({
+            github_username,
+            techs,
+            latitude,
+            longitude
+        })
+
+        setGithubUserName('')
+        setTechs('')
+    }
+    
     return (
         <>
             <strong>Cadastrar</strong>
-            <form>
+            <form onSubmit={ handleSubmit }>
                 <div className='input-block'>
                     <input
                         name='github_username'
