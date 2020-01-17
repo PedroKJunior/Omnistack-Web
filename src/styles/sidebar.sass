@@ -1,7 +1,7 @@
 aside
     width:  320px
     background: #FFF
-    box-shadow: 0 0 14px 0 rgba(0, 0, 0, .2)
+    box-shadow: 0 0 14px 0 rgba(0, 0, 0, .02)
     boder-radius: 2px
     padding: 30px 20px
 
@@ -45,8 +45,12 @@ aside form .input-block input
     font-size: 14px
     color: #666
     border: 0
-    border-bottom: 1px solid #EEE
+    border-bottom: 1px solid #CCC
+    &:focus
+        border-bottom-color: #333
 
+input:focus ~ label
+    color: #333 !important
 
 aside form button[type=submit]
     width: 100%
